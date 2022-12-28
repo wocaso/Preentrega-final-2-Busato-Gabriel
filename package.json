@@ -1,0 +1,19 @@
+{
+  "dependencies": {
+    "@google-cloud/firestore": "^6.4.1",
+    "express": "^4.18.2",
+    "firebase": "^9.15.0",
+    "firebase-admin": "^11.4.1",
+    "mongoose": "^6.8.1"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "prefinal-2-busato-gabriel",
+  "version": "1.0.0",
+  "main": "main.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
