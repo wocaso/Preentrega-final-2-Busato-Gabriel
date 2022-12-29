@@ -204,9 +204,7 @@ routerCarrito.get("/:id", async (req, res) => {
 routerCarrito.post("/:id/productos/:idprod", async (req, res) => {
   const  id = req.params.id;
   const  idprod = req.params.idprod;
-
   let producto = await firebaseDB.getById(idprod)
-  console.log(producto);
   let newProducto = await firebaseDB.addProductToCart(id, producto)
   return res.status(200).json(newProducto);
 });
