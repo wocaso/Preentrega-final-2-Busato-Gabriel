@@ -132,7 +132,7 @@ class firebaseProductContainer{
             const query = this.db.collection(this.collectionCart);
             let data = await query.doc(id).get();
             let newData = data.data();
-            newData.productos.push({...producto,timeStamp:getDate()})
+            newData.productos.push(producto)
             let olddata = await query.doc(id).set(newData);
             return olddata;
         } catch (error) {

@@ -25,7 +25,6 @@ class MongooseContainer{
 
 
       async #connectDB() {
-        console.log("conecta3")
         return mongoose.connect(this.collection, {
           useNewUrlParser: true,
           useUnifiedTopology: true,
@@ -33,7 +32,6 @@ class MongooseContainer{
       }
     
       async #disconnectDB() {
-        console.log("DESCONECTADO")
         await mongoose.disconnect();
       }
 
@@ -119,7 +117,6 @@ class MongooseCartContainer{
 
 
       async #connectDB() {
-        console.log("conecta3")
         return mongoose.connect(this.collection, {
           useNewUrlParser: true,
           useUnifiedTopology: true,
@@ -127,7 +124,6 @@ class MongooseCartContainer{
       }
     
       async #disconnectDB() {
-        console.log("DESCONECTADO")
         await mongoose.disconnect();
       }
 
@@ -177,7 +173,7 @@ async addProductToCart(id, productToAdd){
   try{
     await this.#connectDB()
     let carrito = await this.model.updateMany({id: id},{
-      $push: {productos:[{...productToAdd, timeStamp: getDate()}]}
+      $push: {productos:productToAdd}
   })
   return carrito;
   }catch(error){
